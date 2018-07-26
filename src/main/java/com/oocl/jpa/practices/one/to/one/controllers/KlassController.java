@@ -40,13 +40,13 @@ public class KlassController {
         return repository.findAll();
     }
 
-//    //获取某个Klass
-//    @Transactional
-//    @GetMapping(path = "{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-//    public KlassDTO get(@PathVariable("id")Long id) {
-//        Klass klass = repository.findById(id).get();
-//        return new KlassDTO(klass);
-//    }
+    //获取某个Klass
+    @Transactional
+    @GetMapping(path = "{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public KlassDTO get(@PathVariable("id")Long id) {
+        Klass klass = repository.findById(id).get();
+        return new KlassDTO(klass);
+    }
 //
 //    //更新klass
 //    @Transactional
