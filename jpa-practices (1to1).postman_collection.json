@@ -1,0 +1,225 @@
+{
+	"info": {
+		"_postman_id": "6d646a70-2a53-465b-8079-a97b6ce5b46e",
+		"name": "jpa-practices (1to1)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"_postman_id": "f7323b80-e456-4c89-a183-18423974caa4",
+			"name": "create klass with leader",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3c223089-0540-4f50-8b57-a6d845317a39",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Your test name\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.id).to.eql(1);",
+							"    pm.expect(jsonData.name).to.eql(\"class1\");",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"class1\",\n    \"leader\": {\n        \"name\": \"leader1\"\n    }\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/klasses",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"klasses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "d43f8fb3-bb79-4665-81a7-9a097acf032b",
+			"name": "create klass without leader",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"class2\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/klasses",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"klasses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "ed16fd45-c212-45c7-9fce-eeab0d394e15",
+			"name": "get all klasses",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a3402c5f-3f5c-461d-b8ed-7cf47aafbecf",
+						"type": "text/javascript",
+						"exec": [
+							"",
+							"pm.test(\"Your test name\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.length).to.eql(2);",
+							"",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/klasses",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"klasses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "2027fe1b-8b53-43b9-a277-f84c6a0082e2",
+			"name": "get klass by id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d88713bd-eaf0-41e3-b109-aa510a673e13",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Your test name\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.id).to.eql(1);",
+							"    pm.expect(jsonData.name).to.eql(\"class1\");",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/klasses/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"klasses",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "dffdb59e-43c8-4bf9-ab30-c6767345ff28",
+			"name": "delete klass",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d4a5a5c3-dc8e-4b45-a733-12777117871a",
+						"type": "text/javascript",
+						"exec": [
+							"pm.sendRequest(\"http://localhost:8080/api/v1/klasses\", function (err, response) {",
+							"    pm.test(\"Your test name\", function () {",
+							"        var jsonData = response.json();",
+							"        pm.expect(jsonData.length).to.eql(1);",
+							"});",
+							"    ",
+							"    ",
+							"});",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/klasses/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"klasses",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
