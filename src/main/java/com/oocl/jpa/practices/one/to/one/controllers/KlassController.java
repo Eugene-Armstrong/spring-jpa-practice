@@ -33,13 +33,13 @@ public class KlassController {
         return repository.save(klass);
     }
 
-//    //获取所有Klass
-//    @Transactional
-//    @GetMapping(path="", produces = MediaType.APPLICATION_JSON_VALUE)
-//    public List<Klass> findAll(){
-//        return repository.findAll();
-//    }
-//
+    //获取所有Klass
+    @Transactional
+    @GetMapping(path="", produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<Klass> findAll(){
+        return repository.findAll();
+    }
+
 //    //获取某个Klass
 //    @Transactional
 //    @GetMapping(path = "{id}", produces = MediaType.APPLICATION_JSON_VALUE)
