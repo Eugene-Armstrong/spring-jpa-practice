@@ -56,13 +56,13 @@ public class KlassController {
         repository.save(klass);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
-//
-//    //删除Klass
-//    @Transactional
-//    @DeleteMapping(path = "{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-//    public Klass delete(@PathVariable("id")Long id) {
-//        Klass one = repository.findById(id).get();
-//        repository.delete(one);
-//        return one;
-//    }
+
+    //删除Klass
+    @Transactional
+    @DeleteMapping(path = "{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Klass delete(@PathVariable("id")Long id) {
+        Klass one = repository.findById(id).get();
+        repository.delete(one);
+        return one;
+    }
 }
