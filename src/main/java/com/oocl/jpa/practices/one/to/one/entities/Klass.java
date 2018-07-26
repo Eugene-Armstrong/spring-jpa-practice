@@ -1,4 +1,4 @@
-package com.thoughtworks.jpa.practices.one.to.one.entities;
+package com.oocl.jpa.practices.one.to.one.entities;
 
 import javax.persistence.*;
 

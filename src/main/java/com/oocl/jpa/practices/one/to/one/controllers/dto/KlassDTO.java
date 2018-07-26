@@ -1,7 +1,7 @@
-package com.thoughtworks.jpa.practices.one.to.one.controllers.dto;
+package com.oocl.jpa.practices.one.to.one.controllers.dto;
 
-import com.thoughtworks.jpa.practices.one.to.one.entities.Klass;
-import com.thoughtworks.jpa.practices.one.to.one.entities.Leader;
+import com.oocl.jpa.practices.one.to.one.entities.Klass;
+import com.oocl.jpa.practices.one.to.one.entities.Leader;
 
 public class KlassDTO {
     private final Long id;
