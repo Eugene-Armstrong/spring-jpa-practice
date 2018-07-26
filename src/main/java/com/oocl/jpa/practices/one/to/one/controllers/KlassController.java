@@ -47,15 +47,15 @@ public class KlassController {
         Klass klass = repository.findById(id).get();
         return new KlassDTO(klass);
     }
-//
-//    //更新klass
-//    @Transactional
-//    @PutMapping(path = "{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-//    public ResponseEntity update(@RequestBody Klass klass) {
-//        klass.getLeader().setKlass(klass);
-//        repository.save(klass);
-//        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
-//    }
+
+    //更新klass
+    @Transactional
+    @PutMapping(path = "{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity update(@RequestBody Klass klass) {
+        klass.getLeader().setKlass(klass);
+        repository.save(klass);
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+    }
 //
 //    //删除Klass
 //    @Transactional
