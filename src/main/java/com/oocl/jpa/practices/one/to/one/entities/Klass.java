@@ -12,8 +12,7 @@ public class Klass {
     private String name;
 
     public Klass() { }
-    public Klass(Long id, String name) {
-        this.id = id;
+    public Klass(String name) {
         this.name = name;
     }
 
