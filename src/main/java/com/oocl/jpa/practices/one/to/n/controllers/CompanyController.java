@@ -35,7 +35,7 @@ public class CompanyController {
         company.getEmployees().stream().forEach(employee -> {
             employee.setCompany(company);
         });
-        return  repository.save(company);
+        return repository.save(company);
     }
 
     //获取所有company
