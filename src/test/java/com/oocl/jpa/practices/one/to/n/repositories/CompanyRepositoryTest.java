@@ -49,21 +49,21 @@ public class CompanyRepositoryTest {
         assertThat(companies.size(), is(3));
     }
 
-//    @Test
-//    public void getCompanyById(){
-//        //given
-//        entityManager.persist(new Company("ali"));
-//        entityManager.persist(new Company("wanda"));
-//
-//        //when
-//        List<Company> companies = repository.findAll();
-//
-//        //then
-//        assertThat(companies.size(), is(2));
-//        assertThat(companies.get(0).getName(), is("ali"));
-//        assertThat(companies.get(1).getName(), is("wanda"));
-//    }
-//
+    @Test
+    public void getCompanyById(){
+        //given
+        entityManager.persist(new Company("ali"));
+        entityManager.persist(new Company("wanda"));
+
+        //when
+        List<Company> companies = repository.findAll();
+
+        //then
+        assertThat(companies.size(), is(2));
+        assertThat(companies.get(0).getName(), is("ali"));
+        assertThat(companies.get(1).getName(), is("wanda"));
+    }
+
 //    @Test
 //    public void deleteCompanyById(){
 //        //given
