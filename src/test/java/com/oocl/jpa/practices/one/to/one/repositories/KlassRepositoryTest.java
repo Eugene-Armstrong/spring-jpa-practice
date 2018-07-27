@@ -49,18 +49,18 @@ public class KlassRepositoryTest {
         assertThat(klasses.size(), is(3));
     }
 
-//    @Test
-//    public void getKlassById(){
-//        //given
-//        entityManager.persist(new Klass("class1"));
-//        entityManager.persist(new Klass("class2"));
-//
-//        //when
-//        List<Klass> klasses = repository.findAll();
-//
-//        //then
-//        assertThat(klasses.size(), is(2));
-//        assertThat(klasses.get(0).getName(), is("class1"));
-//        assertThat(klasses.get(1).getName(), is("class2"));
-//    }
+    @Test
+    public void getKlassById(){
+        //given
+        entityManager.persist(new Klass("class1"));
+        entityManager.persist(new Klass("class2"));
+
+        //when
+        List<Klass> klasses = repository.findAll();
+
+        //then
+        assertThat(klasses.size(), is(2));
+        assertThat(klasses.get(0).getName(), is("class1"));
+        assertThat(klasses.get(1).getName(), is("class2"));
+    }
 }
