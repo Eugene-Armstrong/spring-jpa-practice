@@ -63,4 +63,17 @@ public class KlassRepositoryTest {
         assertThat(klasses.get(0).getName(), is("class1"));
         assertThat(klasses.get(1).getName(), is("class2"));
     }
+
+    @Test
+    public void deleteKlassById(){
+        //given
+        entityManager.persist(new Klass("class1"));
+        Klass klass = entityManager.persistAndFlush(new Klass("class2"));
+
+        //when
+        repository.delete(klass);
+
+        //then
+        assertThat(repository.findAll().size(), is(1));
+    }
 }
