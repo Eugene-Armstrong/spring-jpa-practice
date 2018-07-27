@@ -64,17 +64,17 @@ public class CompanyRepositoryTest {
         assertThat(companies.get(1).getName(), is("wanda"));
     }
 
-//    @Test
-//    public void deleteCompanyById(){
-//        //given
-//
-//        entityManager.persist(new Company("ali"));
-//        Company company = entityManager.persistAndFlush(new Company("wanda"));
-//
-//        //when
-//        repository.delete(company);
-//
-//        //then
-//        assertThat(repository.findAll().size(), is(1));
-//    }
+    @Test
+    public void deleteCompanyById(){
+        //given
+
+        entityManager.persist(new Company("ali"));
+        Company company = entityManager.persistAndFlush(new Company("wanda"));
+
+        //when
+        repository.delete(company);
+
+        //then
+        assertThat(repository.findAll().size(), is(1));
+    }
 }
