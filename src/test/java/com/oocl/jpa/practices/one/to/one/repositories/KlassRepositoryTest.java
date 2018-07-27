@@ -8,6 +8,8 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.List;
+
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.Assert.*;
@@ -35,6 +37,30 @@ public class KlassRepositoryTest {
 
     @Test
     public void getAllKlass(){
+        //given
+        entityManager.persist(new Klass("class1"));
+        entityManager.persist(new Klass("class2"));
+        entityManager.persist(new Klass("class3"));
 
+        //when
+        List<Klass> klasses = repository.findAll();
+
+        //then
+        assertThat(klasses.size(), is(3));
     }
+
+//    @Test
+//    public void getKlassById(){
+//        //given
+//        entityManager.persist(new Klass("class1"));
+//        entityManager.persist(new Klass("class2"));
+//
+//        //when
+//        List<Klass> klasses = repository.findAll();
+//
+//        //then
+//        assertThat(klasses.size(), is(2));
+//        assertThat(klasses.get(0).getName(), is("class1"));
+//        assertThat(klasses.get(1).getName(), is("class2"));
+//    }
 }
