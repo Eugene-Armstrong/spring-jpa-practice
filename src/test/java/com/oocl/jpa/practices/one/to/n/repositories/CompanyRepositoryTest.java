@@ -50,20 +50,20 @@ public class CompanyRepositoryTest {
         assertThat(companies.get(1).getName(), is("wanda"));
     }
 
-    @Test
-    public void getCompaniesByPage(){
-        //given
-        entityManager.persist(new Company("ali"));
-        entityManager.persist(new Company("wanda"));
-        entityManager.persist(new Company("google"));
-        entityManager.persist(new Company("facebook"));
-        //when
-        List<Company> companies = repository.findAll(PageRequest.of(1, 2)).getContent();
-        //then
-        assertThat(companies.size(), is(2));
-        assertThat(companies.get(0).getName(), is("google"));
-        assertThat(companies.get(1).getName(), is("facebook"));
-    }
+//    @Test
+//    public void getCompaniesByPage(){
+//        //given
+//        entityManager.persist(new Company("ali"));
+//        entityManager.persist(new Company("wanda"));
+//        entityManager.persist(new Company("google"));
+//        entityManager.persist(new Company("facebook"));
+//        //when
+//        List<Company> companies = repository.findAll(PageRequest.of(1, 2)).getContent();
+//        //then
+//        assertThat(companies.size(), is(2));
+//        assertThat(companies.get(0).getName(), is("google"));
+//        assertThat(companies.get(1).getName(), is("facebook"));
+//    }
 
 
     @Test
