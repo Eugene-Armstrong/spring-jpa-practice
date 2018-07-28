@@ -23,15 +23,11 @@ public class Company {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "company", fetch = FetchType.LAZY)
     private List<Employee> employees = new ArrayList<>();
 
-
-    public Company(Long id, String name) {
-        this.id = id;
+    public Company(String name) {
         this.name = name;
     }
 
-    public Company() {
-
-    }
+    public Company() {}
 
     public Long getId() {
         return id;
