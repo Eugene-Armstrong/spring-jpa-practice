@@ -14,6 +14,14 @@ public class Employee {
     private Long id;
 
     private String name;
+    private String gender;
+
+    public Employee() { }
+
+    public Employee(String name, String gender) {
+        this.name = name;
+        this.gender = gender;
+    }
 
     @CreatedDate
     private ZonedDateTime createdDate = ZonedDateTime.now();
@@ -30,10 +38,6 @@ public class Employee {
     @ManyToOne(fetch= FetchType.LAZY)
     @JoinColumn(name = "company_id")
     private Company company;
-
-    public Employee() {
-    }
-
     public Long getId() {
         return id;
     }
@@ -49,6 +53,10 @@ public class Employee {
     public void setName(String name) {
         this.name = name;
     }
+
+    public String getGender() { return gender; }
+
+    public void setGender(String gender) { this.gender = gender; }
 
     public ZonedDateTime getCreatedDate() {
         return createdDate;
