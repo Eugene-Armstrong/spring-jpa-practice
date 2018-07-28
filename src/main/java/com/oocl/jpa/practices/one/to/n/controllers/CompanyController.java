@@ -1,6 +1,5 @@
 package com.oocl.jpa.practices.one.to.n.controllers;
 
-
 import com.oocl.jpa.practices.one.to.n.controllers.dto.CompanyDTO;
 import com.oocl.jpa.practices.one.to.n.entities.Company;
 import com.oocl.jpa.practices.one.to.n.entities.Employee;
@@ -98,5 +97,4 @@ public class CompanyController {
         repository.delete(one);
         return one;
     }
-
 }

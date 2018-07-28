@@ -25,26 +25,13 @@ public class CompanyRepositoryTest {
     private TestEntityManager entityManager;
 
     @Test
-    public void addCompany(){
-        //given
-        Company newCompany = new Company("ali");
-        entityManager.persist(newCompany);
-
-        //when
-        //then
-        assertThat(repository.save(newCompany), is(newCompany));
-    }
-
-    @Test
     public void findAllCompany(){
         //given
         entityManager.persist(new Company("ali"));
         entityManager.persist(new Company("wanda"));
         entityManager.persist(new Company("baidu"));
-
         //when
         List<Company> companies = repository.findAll();
-
         //then
         assertThat(companies.size(), is(3));
     }
@@ -54,26 +41,33 @@ public class CompanyRepositoryTest {
         //given
         entityManager.persist(new Company("ali"));
         entityManager.persist(new Company("wanda"));
-
         //when
         List<Company> companies = repository.findAll();
-
         //then
         assertThat(companies.size(), is(2));
         assertThat(companies.get(0).getName(), is("ali"));
         assertThat(companies.get(1).getName(), is("wanda"));
     }
 
+
+
+    @Test
+    public void addCompany(){
+        //given
+        Company newCompany = new Company("ali");
+        entityManager.persist(newCompany);
+        //when
+        //then
+        assertThat(repository.save(newCompany), is(newCompany));
+    }
+
     @Test
     public void deleteCompanyById(){
         //given
-
         entityManager.persist(new Company("ali"));
         Company company = entityManager.persistAndFlush(new Company("wanda"));
-
         //when
         repository.delete(company);
-
         //then
         assertThat(repository.findAll().size(), is(1));
     }
