@@ -1,4 +1,4 @@
-CREATE TABLE `user` (
+CREATE TABLE `tw_user` (
   `id` BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `name` VARCHAR(255)
 );

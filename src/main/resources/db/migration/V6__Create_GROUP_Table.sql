@@ -1,4 +1,4 @@
-CREATE TABLE `group` (
+CREATE TABLE `tw_group` (
   `id` BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `name` VARCHAR(255)
 );
