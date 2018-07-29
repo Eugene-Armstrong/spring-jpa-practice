@@ -1,15 +1,15 @@
 # Spring 数据源 (DataSourceAutoConfiguration & DataSourceProperties)
 spring:
-  datasource:
-    driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://192.168.99.100:3306/customer_db?useSSL=false
-    username: root
-    password: root
+  datasource: # 以下为创建连接池需要的4个要素
+    driver-class-name: com.mysql.jdbc.Driver #连接数据库需要加载的驱动，com.mysql.jdbc 是包名，Driver 为类名
+    url: jdbc:mysql://192.168.99.100:3306/customer_db?useSSL=false # 要连接的 url
+    username: root # 用户名
+    password: root # 密码
   jpa:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL5InnoDBDialect # Hibernate 属性，SQL 方言使得 Hibernate 为所选数据库生成更好的 SQL
-        show_sql: true
-        format_sql: true
-        use_sql_comments: true
-        generate_statistics: false
+        show_sql: true # 设为true 则输出所有 SQL 语句到控制台.
+        format_sql: true # 设为true 则格式化 Hibernate 的 SQL 输出语句
+        use_sql_comments: true # 设为true 则显示注释，用以指出什么操作产生的 SQL 语句
+        generate_statistics: false # 设为false 则 Hibernate 将不收集有助于性能调节的统计数据
