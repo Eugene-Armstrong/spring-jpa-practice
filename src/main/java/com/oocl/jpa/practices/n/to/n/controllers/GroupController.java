@@ -30,9 +30,28 @@ public class GroupController {
     @Transactional
     @PostMapping(path = "", produces = MediaType.APPLICATION_JSON_VALUE)
     public Group save(@RequestBody Group group) {
-        if(group.getUsers()!=null) {
-            userRepository.saveAll(group.getUsers());
-        }
         return  groupRepository.save(group);
+    }
+
+    //更新group
+    @PutMapping(path = "" , produces = MediaType.APPLICATION_JSON_VALUE)
+    public Group updateGroup(@RequestBody Group group){
+        return groupRepository.save(group);
+    }
+
+    //删除group
+    @Transactional
+    @DeleteMapping(path = "{id}" , produces = MediaType.APPLICATION_JSON_VALUE)
+    public Group deleteGroupById (@PathVariable Long id){
+        Group group = groupRepository.findById(id).get();
+        groupRepository.delete(group);
+        return group;
+    }
+
+    //查询group
+    @GetMapping(path = "{id}" , produces = MediaType.APPLICATION_JSON_VALUE)
+    public Group findGroupById(@PathVariable Long id){
+        Group group = groupRepository.findById(id).get();
+        return group;
     }
 }

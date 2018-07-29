@@ -19,8 +19,7 @@ public class UserController {
     private GroupRepository groupRepository;
 
     @Autowired
-    public UserController(UserRepository userRepository,
-                          GroupRepository groupRepository){
+    public UserController(UserRepository userRepository, GroupRepository groupRepository){
         this.userRepository= userRepository;
         this.groupRepository = groupRepository;
     }
@@ -60,7 +59,7 @@ public class UserController {
 
     //查询user
     @GetMapping(path = "{id}" , produces = MediaType.APPLICATION_JSON_VALUE)
-    public User findById(@PathVariable Long id){
+    public User findUserById(@PathVariable Long id){
         User user = userRepository.findById(id).get();
         return user;
     }
